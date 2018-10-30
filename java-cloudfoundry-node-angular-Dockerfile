@@ -1,0 +1,9 @@
+FROM hgearhart/java-cf-cli
+
+ENV BASH /bin/bash
+
+RUN wget https://nodejs.org/dist/v8.12.0/node-v8.12.0-linux-x64.tar.gz \
+    && tar -C /usr/local --strip-components=1 -xzf node-v8.12.0-linux-x64.tar.gz \
+    && npm install npm -g
+
+RUN npm install ng -g
